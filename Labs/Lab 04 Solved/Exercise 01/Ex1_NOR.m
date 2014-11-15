@@ -1,0 +1,21 @@
+clear; clear all; clc;
+data = load('Ex1_NOR_Training_Data.txt');
+X = data(:, 1:2); y = data(:, 3);
+m = length(y);
+fprintf('Running Gradient Descent ...\n')
+X = [ones(m, 1), X];
+theta = zeros(3, 1);
+iterations = 950;
+alpha = 0.1;
+theta = gradientDescent(X, y, theta, alpha, iterations);
+fprintf('Theta found by gradient descent: ');
+fprintf('%f %f %f \n', theta(1), theta(2), theta(3));
+fprintf('Cost at this value of theta: %f.\n', CostFunction(X, y, theta));
+predict = abs(round([1, 1, 1] *theta));
+fprintf('For X1 = 1 & X2 = 1, we predict a value of %f\n', predict);
+predict = abs(round([1, 0, 1] *theta));
+fprintf('For X1 = 0 & X2 = 1, we predict a value of %f\n', predict);
+predict = abs(round([1, 1, 0] *theta));
+fprintf('For X1 = 1 & X2 = 0, we predict a value of %f\n', predict);
+predict = abs(round([1, 0, 0] *theta));
+fprintf('For X1 = 0 & X2 = 0, we predict a value of %f\n', predict);
