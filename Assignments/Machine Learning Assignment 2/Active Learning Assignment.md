@@ -8,7 +8,7 @@ To use less data and perform better classification by choosing better data.
 * When training is a costly process.
 * Better result for same amount of training since better data is used.
 
-How is better data chosen?
+How is Better Data chosen?
 --------------------------
 The learner queries for interesting data and asks an expert to label them.
 
@@ -31,7 +31,7 @@ The learner queries for interesting data and asks an expert to label them.
 <b>Advantage</b> -> Data available readily, learner controls amount of data, useful when entire data doesn't fit into memory.  
 <b>Disadvantage</b> -> Repeated Confidence/ Information calculation on large data set, large data needs to stored and ready for efficient access.  
 
-What is more informative data?  
+What is More Informative Data?  
 ------------------------------  
 Instances that are less certain of the class they belong to.  
 Two techniques for choosing more informative points:  
