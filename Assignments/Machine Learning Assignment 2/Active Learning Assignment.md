@@ -31,3 +31,10 @@ The learner queries for interesting data and asks an expert to label them.
 <b>Advantage</b> -> Data available readily, learner controls amount of data, useful when entire data doesn't fit into memory.  
 <b>Disadvantage</b> -> Repeated Confidence/ Information calculation on large data set, large data needs to stored and ready for efficient access.  
 
+What is more informative data?  
+------------------------------  
+Instances that are less certain of the class they belong to.  
+Two techniques for choosing more informative points:  
+* <b><i>Uncertainty Sampling</i></b> -> Query the points model is least confident about.  
+&nbsp;&nbsp;&nbsp;&nbsp;Three common uncertainty measures:-  
+1) <i>Least Confident</i> -> Points with lowest confidence are most informative. Reveals information only about its relation with closest class, outliers more likely to be chosen. Causes problems when classes are unevenly sized.
