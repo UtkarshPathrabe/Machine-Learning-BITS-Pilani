@@ -8,7 +8,8 @@ To use less data and perform better classification by choosing better data.
 * When training is a costly process.
 * Better result for same amount of training since better data is used.
 
-### How is better data chosen?
+How is better data chosen?
+--------------------------
 The learner queries for interesting data and asks an expert to label them.
 
 ### Query scenarios:
