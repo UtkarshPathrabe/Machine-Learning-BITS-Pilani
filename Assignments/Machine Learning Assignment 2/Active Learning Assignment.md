@@ -37,4 +37,8 @@ Instances that are less certain of the class they belong to.
 Two techniques for choosing more informative points:  
 * <b><i>Uncertainty Sampling</i></b> -> Query the points model is least confident about.  
 &nbsp;&nbsp;&nbsp;&nbsp;Three common uncertainty measures:-  
-1) <i>Least Confident</i> -> Points with lowest confidence are most informative. Reveals information only about its relation with closest class, outliers more likely to be chosen. Causes problems when classes are unevenly sized.
+1) <i>Least Confident</i> -> Points with lowest confidence are most informative. Reveals information only about its relation with closest class, outliers more likely to be chosen. Causes problems when classes are unevenly sized.  
+2) <i>Smallest Margin</i> -> Points with least difference between two nearest classes are more informative. Gives better result than least confident for uneven size of classes. However it again fails to take into consideration more number of classes than two. Not a considerable disadvantage for classification problems.  
+3) <i>Entropy</i> -> Points with higher entropy are more informative. A much better measure as it takes into consideration relation of a point with all classes for entropy calculation.  
+* <b><i>Query-By-Committee (QBC)</b></i> -> Query points most uncertain after passing through ensemble. Reduces version space quickly.  
+
