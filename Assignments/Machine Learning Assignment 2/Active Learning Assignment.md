@@ -42,3 +42,23 @@ Two techniques for choosing more informative points:
 3) <i>Entropy</i> -> Points with higher entropy are more informative. A much better measure as it takes into consideration relation of a point with all classes for entropy calculation.  
 * <b><i>Query-By-Committee (QBC)</b></i> -> Query points most uncertain after passing through ensemble. Reduces version space quickly.  
 
+Problems With Active Learning:  
+------------------------------  
+Active learning less robust to outliers and noise since they always give high information value but are to be ignored.  
+&nbsp;&nbsp;&nbsp;&nbsp;Some solutions to outliers problem:  
+* <i>Density Weighing</i> -> Incorporates nearby density of a point into informativeness calculation.  
+* <i>Estimated Error Reduction</i> -> Incorporates risk associated with a point if used for training, outliers have higher risk.  
+
+Problem Statement:  
+------------------
+Identify patients who will be admitted to a hospital within the next year using historical claims data.  
+
+### Data source:
+Heritage Provider Network has public data set released in: `https://www.heritagehealthprize.com/c/hhp/data`  
+
+### Details of the application:  
+* Application predicts number of patients who will be admitted to a hospital within the next year using historical data of the hospital.  
+* Once known, health care providers can develop new care plans and strategies to reach patients before emergencies occur, thereby reducing the number of unnecessary hospitalizations. This will result in increasing the health of patients while decreasing the cost of care.  
+* A large number of individuals are admitted to hospitals each year. Government wastes billions of dollars in unnecessary hospital admissions. Identifying patients who are at risk and ensuring they get the treatment they need early on can save lot of money to healthcare.  
+* Available dataset comprises of 2.7 million patient records. Building a classifier using complete data set is expensive in time and memory. Hence we need to choose selected input labelled records to build a classifier and iteratively build the classifier by choosing better data. This is the reason why active learning is used to build the classifier.  
+
