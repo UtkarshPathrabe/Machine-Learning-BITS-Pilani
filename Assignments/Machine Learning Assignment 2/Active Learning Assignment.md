@@ -75,6 +75,7 @@ We perform active learning on this model as follows:
 * Pool-Based Active Learning.  
 * Uncertainty Sampling for Query Synthesis.  
 * Entropy used as Measure of Uncertainty.  
+
 Every next iteration of training works upon the points the earlier model was least confident about.  
 
 ### Results and Discussion:  
