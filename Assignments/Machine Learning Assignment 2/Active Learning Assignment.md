@@ -62,3 +62,18 @@ Heritage Provider Network has public data set released in: `https://www.heritage
 * A large number of individuals are admitted to hospitals each year. Government wastes billions of dollars in unnecessary hospital admissions. Identifying patients who are at risk and ensuring they get the treatment they need early on can save lot of money to healthcare.  
 * Available dataset comprises of 2.7 million patient records. Building a classifier using complete data set is expensive in time and memory. Hence we need to choose selected input labelled records to build a classifier and iteratively build the classifier by choosing better data. This is the reason why active learning is used to build the classifier.  
 
+### Modelling:  
+The data available has the patient data for first two years and based on that we need to predict what will be the approximate number of days that the patient will be admitted in the third year.  
+There are two phases in the modelling of the problem -  
+1) <i>Data Preparation</i>: We did this in SQL Developer on the Oracle Database. Data provided is in form of chunks containing different aspects of the problem but for applying any model to the data we need it to be in one single table containing all the required information to solve the problem. Hence this step.  
+2) <i>Final Results</i>: The prepared data from step 1 was given to the GBM model in R. Gradient boosting is a machine learning technique for regression problems, which produces a prediction model in the form of an ensemble of weak prediction models, typically decision trees. It builds the model in a stage-wise fashion like other boosting methods do, and it generalizes them by allowing optimization of an arbitrary differentiable loss function. The gradient boosting method can also be used for classification problems by reducing them to regression with a suitable loss function.
+The data available is very huge and hence it takes a few hours to prepare it and do its processing to get an efficient model and the final result.  
+
+### Solution:  
+The chance that a patient will be readmitted to a hospital is more for cases of chronic diseases than a case of cough or cold. Similarly, for some small hospital with poor quality of healthcare and doctors, the chances of patient readmittance is high. Upon analyzing the dataset, we see that prediction is more local to patients with specific properties. These "interesting" cases are more likely to be readmitted. So how to improve the existing algorithm? ACTIVE LEARNING!!!  
+We perform active learning on this model as follows:  
+* Pool-Based Active Learning.  
+* Uncertainty Sampling for Query Synthesis.  
+* Entropy used as Measure of Uncertainty.  
+Every next iteration of training works upon the points the earlier model was least confident about.  
+
