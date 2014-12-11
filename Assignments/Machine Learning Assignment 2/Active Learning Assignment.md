@@ -77,3 +77,11 @@ We perform active learning on this model as follows:
 * Entropy used as Measure of Uncertainty.  
 Every next iteration of training works upon the points the earlier model was least confident about.  
 
+### Results and Discussion:  
+We observed that the active learning approach gave significantly better results.  
+With 500 trees used in the passive learning GBDT approach with a learning rate of 0.5, the loss function converged to ~0.2 with negligible improvement with each iteration.  
+Active learning brought down the loss function to ~0.183. The number of trees for GBDT was determined for every iteration of active learning, hence varying each time, with the overall number if trees being higher than passive learning but providing higher improvement in terms of loss.  
+Active learning takes a massive amount time in posterior probability and entropy calculations.   This is is one factor that must be addressed when designing an active learning implementation. The overall improvement is much higher in active learning than passive approach for the same learning rate.  
+
+### Conclusions:  
+As compared to Passive Learning, Active Learning is more useful in this problem. It provides better and efficient results. In this problem as dataset is very huge and mostly unlabelled and as Active Learning performs well on such datasets only, we have used the process here.
